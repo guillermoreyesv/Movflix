@@ -177,7 +177,7 @@
     </script>
 </head> 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  sticky-top">
         <a class="navbar-brand" href="#">PersonalFlix</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -191,7 +191,7 @@
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle  bg-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -204,11 +204,14 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
+                <li>
+                    <form  class="form-inline my-2 my-lg-0" id="IDformUpVideo" name="NAMEformUpVideo" method="post" enctype="multipart/form-data">
+                        <input style="width: 250px" class="form-control mr-sm-2" type="file" name="fichero_usuario" id="fichero_usuario">
+                        <input  class="btn btn-outline-success my-2 my-sm-0" class="button" type="submit" value="Upload" />
+                    </form>
+                </li>
             </ul>
-            <form  class="form-inline my-2 my-lg-0" id="IDformUpVideo" name="NAMEformUpVideo" method="post" enctype="multipart/form-data">
-                <input type="file" name="fichero_usuario" id="fichero_usuario">
-                <input class="button" type="submit" value="Upload" />
-            </form>
+            
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -216,20 +219,10 @@
         </div>
     </nav>
 
-
-
-	<form id="IDformUpVideo" name="NAMEformUpVideo" method="post" enctype="multipart/form-data">
-	    <input type="file" name="fichero_usuario" id="fichero_usuario">
-	    <input class="button" type="submit" value="Upload" />
-	</form>
-    <div id="barraDeCarga" style='background: #451e4c; color: #FFFFFF; width: 100px;border-style: solid; border-color: #000000;'>
-        <div style='background: #773682; width: 0px; opacity: 0.9' id="pogreso"></div>
-    </div>
-
-	<div style="border-style: solid;">
-		<p>Peliculas subidas</p>
-        <div  style="border-style: dashed;" id="resultado">resultado
-            <button></button>
+	<div class="container" style="border-style: solid;">
+		<h1>Catalogo</h1>
+        <div class="panel-group"  style="border-style: dashed;" id="resultado">
+            resultado
         </div>
     </div>
 </body>
