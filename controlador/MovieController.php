@@ -50,35 +50,35 @@
 			$pelicula = new Movie();
 			$catalogo = $pelicula->verPeliculas();
 			$respuesta;
+			$respuesta ="<div class='row'>"; //abrimos la fila
 			while($fila = $catalogo->fetch_assoc()) {	
-				$respuesta ="<div class='row'>"; //abrimos parrafo
-				$respuesta .="<div class='col-sm-6'>"; //abrimos parrafo
-				$respuesta .="<div class='card'>"; //abrimos parrafo
-				$respuesta .="<div class='card-header'>"; //abrimos parrafo
-				$respuesta .="<form id='EditForm";
-				$respuesta .=$fila['idMovie']; //el id
-				$respuesta .="' name='EditForm' method='post' enctype='multipart/form-data'>"; //abrimos parrafo
-				$respuesta .="<input disabled class='nuevoTitulo' type='text' value='";
-				$respuesta .=substr($fila['title'],0,-4); //Añadimos el titulo
-				$respuesta .="'>"; //abrimos parrafo
-				$respuesta .="<input type='button' id='";
-				$respuesta .=$fila['idMovie']; //el id
-				$respuesta .="' class='editarButton' value='edit'>";
-				$respuesta .="<button id='";
-				$respuesta .=$fila['idMovie']; //el id
-				$respuesta .="' class='eliminarButton'>del</button><br />";
-				$respuesta .="</form>";
-				$respuesta .="</div>"; //Cerramos el parrafo
-				$respuesta .="<div class='card-body'>"; //abrimos parrafo
-				$respuesta .="<video width='100%' controls><source src='vista/movies/";
-				$respuesta .=$fila['idMovie']; //La ruta
-				$respuesta .=".mp4' type='video/mp4'>Your browser does not support the video tag.</video>";
-				$respuesta .="</div>"; //Cerramos el parrafo
-				$respuesta .="</div>"; //Cerramos el parrafo
-				$respuesta .="</div>"; //Cerramos el parrafo
-				$respuesta .="</div>"; //Cerramos el parrafo
-                echo $respuesta;
+				$respuesta .="<div class='col-sm-6 mb-1 mt-1'>"; //abrimos la columna
+				$respuesta .="<div class='card'>"; //abrimos cuerpo
+				$respuesta .="<div class='card-header'>"; //abrimos cuerpo
+					$respuesta .="<form id='EditForm"; //iniciamos el formulario
+					$respuesta .=$fila['idMovie']; //el id
+					$respuesta .="' name='EditForm' method='post' enctype='multipart/form-data'>"; 
+						$respuesta .="<input disabled class='nuevoTitulo' type='text' value='"; //colomanos es text donde ira el nombre
+						$respuesta .=substr($fila['title'],0,-4); //Añadimos el titulo
+						$respuesta .="'>"; //cerramos el text
+						$respuesta .="<input type='button' id='";
+						$respuesta .=$fila['idMovie']; //el id
+						$respuesta .="' class='editarButton' value='edit'>";
+						$respuesta .="<button id='";
+						$respuesta .=$fila['idMovie']; //el id
+						$respuesta .="' class='eliminarButton'>del</button><br />";
+					$respuesta .="</form>";
+					$respuesta .="</div>"; //Cerramos la columna
+					$respuesta .="<div class='card-body p-0'>"; //abrimos cuerpo
+						$respuesta .="<video  width='100%' height='290px' controls><source src='vista/movies/";
+						$respuesta .=$fila['idMovie']; //La ruta
+						$respuesta .=".mp4' type='video/mp4'>Your browser does not support the video tag.</video>";
+					$respuesta .="</div>"; //Cerramos la columna
+				$respuesta .="</div>"; //Cerramos la columna
+				$respuesta .="</div>"; //Cerramos la columna
             }
+            $respuesta .="</div>"; //Cerramos la fila
+            echo $respuesta;
 		}
 
 		function eliminarPelicula($id){

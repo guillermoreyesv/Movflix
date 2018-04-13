@@ -185,24 +185,37 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle  bg-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                        Genero
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdown"> 
+                         <a class="dropdown-item" href="#">Accion</a>
+                          <a class="dropdown-item" href="#">Comedia</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  bg-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Año
+                    </a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdown"> 
+                         <a class="dropdown-item" href="#">2018</a>
+                          <a class="dropdown-item" href="#">2017</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  bg-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Inicia Sesion
+                    </a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdown"> 
+                        <form class="form-inline my-2 my-lg-0">
+                            <input type="text" class="form-control ml-2 mr-2" placeholder="Usuario" name="txtUser">
+                            <input type="password" class="form-control ml-2 mr-2"  placeholder="Contraseña" name="txtPassword">
+                            <input class="btn btn-success ml-2 mr-2 mt-2" type="submit" name="btnLogin">
+                        </form>
+                    </div>
                 </li>
                 <li>
                     <form  class="form-inline my-2 my-lg-0" id="IDformUpVideo" name="NAMEformUpVideo" method="post" enctype="multipart/form-data">
@@ -221,9 +234,10 @@
 
 	<div class="container" style="border-style: solid;">
 		<h1>Catalogo</h1>
-        <div class="panel-group"  style="border-style: dashed;" id="resultado">
+        <div class="container"  style="border-style: dashed;" id="resultado">
             resultado
         </div>
     </div>
+</div>
 </body>
 </html>
