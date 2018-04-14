@@ -44,6 +44,7 @@
 			}
 			//echo 'Más información de depuración:';
 			//print_r($_FILES);
+			//test
 		}
 
 		function verPelicula(){
