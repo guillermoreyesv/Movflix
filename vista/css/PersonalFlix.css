@@ -35,3 +35,11 @@ body{
 .card-header{
 	background-color: #343a40;
 }
+
+.barraDeCarga{
+	display: none;
+}
+
+.pogreso{
+	width: 0px; 
+}

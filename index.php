@@ -19,18 +19,6 @@
             $.ajax({
                     type: "POST",
                     url: "controlador/VerCatalogo.php",
-                    xhr: function(){
-                    var xhr = new window.XMLHttpRequest();
-                        //Upload progress
-                        xhr.upload.addEventListener("progress", function(evt){
-                            if (evt.lengthComputable) {
-                                var percentComplete = (evt.loaded / evt.total)*100;
-                                $("#pogreso").css("width",percentComplete+"%");
-                                $("#pogreso").html(percentComplete.toFixed(0)+"%");
-                            }
-                        }, false);
-                        return xhr;
-                    },
                     data: "",
                     dataType: "html",
                     beforeSend: function(){
@@ -41,8 +29,7 @@
                     error: function(){
                           alert("error petición ajax");
                     },
-                    success: function(data){    
-                        //$("#barraDeCarga").empty();                                                
+                    success: function(data){                                                  
                         $("#resultado").empty();
                         $("#resultado").append(data);
                     }
@@ -58,8 +45,9 @@
                     xhr.upload.addEventListener("progress", function(evt){
                         if (evt.lengthComputable) {
                             var percentComplete = (evt.loaded / evt.total)*100;
-                            $("#pogreso").css("width",percentComplete+"%");
-                            $("#pogreso").html(percentComplete.toFixed(0)+"%");
+                            $(".barraDeCarga").css("display","block");
+                            $(".progreso").css("width",percentComplete+"%");
+                            $(".progreso").html(percentComplete.toFixed(0)+"%");
                         }
                     }, false);
                     return xhr;
@@ -70,10 +58,13 @@
                 processData: false,
                 type: 'POST', //Metodo de envio 
                 beforeSend: function(){
+                        $(".barraDeCarga").css("display","block");
                           //imagen de carga
                           //$("#barraDeCarga").html("<p align  ='center'><img src='vista/images/ajax-loader.gif' /></p>");
                     },   
                 success: function(data){
+                    document.getElementById("IDformUpVideo").reset();
+                    $(".barraDeCarga").css("display","none");
                     iniciarPagina();
                     /*
                     //Si funciona entonces validamos la respuesta del servidor
@@ -123,31 +114,6 @@
                         iniciarPagina();
                     }
               });
-            /*
-            $.ajax({
-                url: 'controlador/UploadMovie.php', //Ruta a donde se comunicara
-                data: formData, //El formulario
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: 'POST', //Metodo de envio 
-                beforeSend: function(){
-                          //imagen de carga
-                          //$("#resultado").html("<p align  ='center'><img src='vista/images/ajax-loader.gif' /></p>");
-                    },   
-                success: function(data){
-                    //Si funciona entonces validamos la respuesta del servidor
-                    if(data=="error"){
-                        //Si PHP responde con la palabra error entonces no se subio
-                        alert("No se subio");
-                    }else{
-                        //Si responde con otro tipo de texto entonces si se subio el archivo
-                        $("#resultado").append(data);
-                    }
-                    
-                }
-            });
-            */
         }
 
     	$(document).ready(function(){
@@ -208,7 +174,7 @@
                 </li>
                 <li>
                     <form  class="form-inline my-2 my-lg-0" id="IDformUpVideo" name="NAMEformUpVideo" method="post" enctype="multipart/form-data">
-                        <input class="form-control mr-sm-2" type="file" name="fichero_usuario" id="fichero_usuario">
+                        <input class="form-control mr-sm-2" accept=".mp4" type="file" name="fichero_usuario" id="fichero_usuario">
                         <input  class="btn btn-outline-success my-2 my-sm-0" class="button" type="submit" value="subir" />
                     </form>
                 </li>
@@ -220,7 +186,9 @@
             </form>
         </div>
     </nav>
-
+     <div class="barraDeCarga progress">
+        <div class="progreso progress-bar bg-secondary">Esperando</div>
+    </div>
 	<div class="container cuerpoPrincipal">
 		<h1>Catalogo</h1>
         <div class="container" id="resultado">
