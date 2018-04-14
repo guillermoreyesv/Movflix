@@ -11,6 +11,7 @@
     <script src="vista/js/bootstrap.min.js"></script>
     <script src="vista/js/popper.min.js"></script>
     <link rel="stylesheet" href="vista/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="vista/css/PersonalFlix.css" type="text/css">
     <!--<script src="http://malsup.github.com/jquery.form.js"></script> -->
     <script>
 
@@ -184,21 +185,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle  bg-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Genero
-                    </a>
-                    <div class="dropdown-menu " aria-labelledby="navbarDropdown"> 
-                         <a class="dropdown-item" href="#">Accion</a>
-                          <a class="dropdown-item" href="#">Comedia</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle  bg-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Año
+                        Explorar    
                     </a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown"> 
                          <a class="dropdown-item" href="#">2018</a>
@@ -211,7 +200,7 @@
                     </a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown"> 
                         <form class="form-inline my-2 my-lg-0">
-                            <input type="text" class="form-control ml-2 mr-2" placeholder="Usuario" name="txtUser">
+                            <input type="text" class="form-control ml-2 mr-2 mb-1" placeholder="Usuario" name="txtUser">
                             <input type="password" class="form-control ml-2 mr-2"  placeholder="Contraseña" name="txtPassword">
                             <input class="btn btn-success ml-2 mr-2 mt-2" type="submit" name="btnLogin">
                         </form>
@@ -219,22 +208,22 @@
                 </li>
                 <li>
                     <form  class="form-inline my-2 my-lg-0" id="IDformUpVideo" name="NAMEformUpVideo" method="post" enctype="multipart/form-data">
-                        <input style="width: 250px" class="form-control mr-sm-2" type="file" name="fichero_usuario" id="fichero_usuario">
-                        <input  class="btn btn-outline-success my-2 my-sm-0" class="button" type="submit" value="Upload" />
+                        <input class="form-control mr-sm-2" type="file" name="fichero_usuario" id="fichero_usuario">
+                        <input  class="btn btn-outline-success my-2 my-sm-0" class="button" type="submit" value="subir" />
                     </form>
                 </li>
             </ul>
             
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav>
 
-	<div class="container" style="border-style: solid;">
+	<div class="container cuerpoPrincipal">
 		<h1>Catalogo</h1>
-        <div class="container"  style="border-style: dashed;" id="resultado">
+        <div class="container" id="resultado">
             resultado
         </div>
     </div>

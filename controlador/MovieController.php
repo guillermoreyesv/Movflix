@@ -52,21 +52,21 @@
 			$respuesta;
 			$respuesta ="<div class='row'>"; //abrimos la fila
 			while($fila = $catalogo->fetch_assoc()) {	
-				$respuesta .="<div class='col-sm-6 mb-1 mt-1'>"; //abrimos la columna
+				$respuesta .="<div class='col-lg-6 mb-1 mt-1'>"; //abrimos la columna
 				$respuesta .="<div class='card'>"; //abrimos cuerpo
 				$respuesta .="<div class='card-header'>"; //abrimos cuerpo
 					$respuesta .="<form id='EditForm"; //iniciamos el formulario
 					$respuesta .=$fila['idMovie']; //el id
-					$respuesta .="' name='EditForm' method='post' enctype='multipart/form-data'>"; 
-						$respuesta .="<input disabled class='nuevoTitulo' type='text' value='"; //colomanos es text donde ira el nombre
+					$respuesta .="' name='EditForm' class='form-inline my-2 my-lg-0' method='post' enctype='multipart/form-data'>"; 
+						$respuesta .="<input disabled class='nuevoTitulo form-control' type='text' value='"; //colomanos es text donde ira el nombre
 						$respuesta .=substr($fila['title'],0,-4); //Añadimos el titulo
 						$respuesta .="'>"; //cerramos el text
 						$respuesta .="<input type='button' id='";
 						$respuesta .=$fila['idMovie']; //el id
-						$respuesta .="' class='editarButton' value='edit'>";
+						$respuesta .="' class='editarButton btn btn-warning m-1' value='edit'>";
 						$respuesta .="<button id='";
 						$respuesta .=$fila['idMovie']; //el id
-						$respuesta .="' class='eliminarButton'>del</button><br />";
+						$respuesta .="' class='eliminarButton btn btn-danger m-1'>del</button><br />";
 					$respuesta .="</form>";
 					$respuesta .="</div>"; //Cerramos la columna
 					$respuesta .="<div class='card-body p-0'>"; //abrimos cuerpo

@@ -1,0 +1,37 @@
+video{
+	background-color: black;
+}
+
+.cuerpoPrincipal{
+	background-color: #1e1e1e;
+	color: #efefef;
+}
+
+body{
+	background-color: #191919;
+}
+
+.navbar a{
+	
+}
+
+.dropdown-menu{
+	background-color: #505962;
+}
+
+.dropdown-menu a{
+	color: white;
+}
+
+.dropdown-menu a:hover {
+	background-color: #2e3338;
+	color: white;
+}
+
+.card{
+	border-color: #2e3338;
+}
+
+.card-header{
+	background-color: #343a40;
+}
